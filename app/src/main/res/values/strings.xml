@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MemorialsPhoto</string>
+    <string name="Main"><u>Главная</u></string>
+    <string name="Gallery"><u>Галерея</u></string>
+</resources>

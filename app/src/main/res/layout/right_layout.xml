@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--Верхние надписи и кнопки-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Назад-->
+        <ImageButton
+            android:id="@+id/BackFromCreating"
+            android:onClick="BackFromCreating"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:backgroundTint="#00212121"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Текст создать-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Создать"
+            android:textColor="@color/Text"
+            android:textSize="24sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Save"
+            app:layout_constraintStart_toEndOf="@+id/BackFromCreating"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Сохранить-->
+        <ImageButton
+            android:id="@+id/Save"
+            android:onClick="Save"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/ic_baseline_save_24"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--Название-->
+    <EditText
+        android:id="@+id/NewName"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:elevation="8dp"
+
+        android:hint="Введите название"
+        android:textColor="@color/Text"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColorHint="@color/Text"
+        android:background="@drawable/shape"
+
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+<!--Новое фото-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/NewImage"
+        android:onClick="openGallery"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
+        android:background="@drawable/shape"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintDimensionRatio="H,10:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewName"/>
+
+<!--    Дата-->
+    <TextView
+        android:id="@+id/NewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="Дата"
+        android:textColorHint="@color/Text"
+        android:textColor="@color/Text"
+        android:elevation="10dp"
+
+        android:background="@drawable/shape"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/NewImage"
+        app:layout_constraintEnd_toEndOf="@+id/NewImage"
+        app:layout_constraintStart_toStartOf="@+id/NewImage" />
+    <!--Новое описание-->
+    <EditText
+        android:id="@+id/NewText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+
+        android:hint="Введите описание"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/Text"
+        android:textColorHint="@color/Text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/shape"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/NewGeolocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewImage" />
+<!--Новая геолокация-->
+    <TextView
+        android:onClick="Geoposition_My"
+        android:id="@+id/NewGeolocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+
+        android:text="Геопозиция не определена"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/Text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/shape"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

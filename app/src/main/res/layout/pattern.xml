@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+<!--Название-->
+    <TextView
+        android:id="@+id/Main_Name"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:elevation="8dp"
+        android:background="@drawable/shape"
+
+        android:text="Мой Район"
+        android:gravity="center"
+        android:textColor="@color/Text"
+        android:textSize="24sp"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--Картинка-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
+        android:src="@drawable/b"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+
+        app:layout_constraintDimensionRatio="H,10:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Main_Name" />
+    <!--    Дата-->
+    <TextView
+        android:id="@+id/Main_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:elevation="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="12.12.1212"
+        android:textColor="@color/Text"
+
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+<!--Текст-->
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:text="Hello"
+        android:textColor="@color/Text"
+        android:textSize="14sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/Geolocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+<!--Геопозиция-->
+    <TextView
+        android:id="@+id/Geolocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+
+        android:text="Геопозиция не определена"
+        android:gravity="center"
+        android:textColor="@color/Text"
+        android:textSize="12sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/shape"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
